@@ -1,0 +1,56 @@
+{
+  "name": "nodejs-postgre-starter",
+  "version": "1.0.0",
+  "description": "Starter pack for nodejs-postgres apps",
+  "keywords": [
+    "nodejs",
+    "expressjs",
+    "sequelize",
+    "postgres",
+    "babel",
+    "javascript",
+    "backend"
+  ],
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon --exec babel-node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EphraimDev/nodejs-starter.git"
+  },
+  "author": "Ephraim Aigbefo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EphraimDev/nodejs-starter/issues"
+  },
+  "homepage": "https://github.com/EphraimDev/nodejs-starter#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "path": "^0.12.7",
+    "pg": "^8.2.1",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^5.21.13"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.3",
+    "@babel/core": "^7.10.3",
+    "@babel/node": "^7.10.3",
+    "@babel/plugin-transform-runtime": "^7.10.3",
+    "@babel/preset-env": "^7.10.3",
+    "@babel/register": "^7.10.3",
+    "@babel/runtime": "^7.10.3",
+    "babel-loader": "^8.1.0",
+    "eslint": "^7.3.1",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.21.2",
+    "nodemon": "^2.0.4",
+    "sequelize-cli": "^5.5.1"
+  }
+}
