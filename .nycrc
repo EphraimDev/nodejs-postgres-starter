@@ -1,0 +1,15 @@
+{
+  "reporter": [
+    "lcov",
+    "text"
+  ],
+  "include": [
+    "/**/*.js"
+  ],
+  "require": [
+    "@babel/core"
+  ],
+  "sourceMap": false,
+  "instrument": true,
+  "extends": "@istanbuljs/nyc-config-babel"
+}

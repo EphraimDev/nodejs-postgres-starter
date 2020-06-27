@@ -1,0 +1,28 @@
+language: node_js
+node_js:
+  - "10.16.0"
+
+services:
+  - postgresql
+
+env:
+  global:
+    - CC_TEST_REPORTER_ID=3e9bd135c72b5ffc361a729b67ced56db75f77d2d1a9bf104c25c4d8a68611d5
+    - CI_DB_PASS=BmoDh5WJ49mMpxSHze_ehFKQWpmHTu7v
+    - CI_DB_HOST=ruby.db.elephantsql.com
+    - CI_DB_USER=skpcghvi
+    - CI_DB_DATABASE=skpcghvi
+    - CI_DB_PORT=5432
+    - SECRET_KEY=secret
+
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+
+script:
+  - npm run test
+
+after_script:
+  - npm run coverage
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
