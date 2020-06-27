@@ -6,12 +6,12 @@ import ComparePassword from '../middlewares/comparePassword';
 class AuthController {
   static async signup(req, res) {
     const { email, password } = req.body;
-
+    console.log(1)
     try {
       if (!email || !password) {
         return res.status(400).json({ status: 'error', message: 'All fields are required' });
       }
-      
+      console.log(2)
       const hashPassword = await HashPassword(password);
       const [user, created] = await User.findOrCreate({
         where: { email: email },
@@ -19,19 +19,21 @@ class AuthController {
           password: hashPassword,
         },
       });
-
+      console.log(3)
       if (created) {
         const token = await Authenticate(user);
 
         return res.status(200).json({ user, token, status: 'success' });
       }
-
+      console.log(4)
       if (user) {
         return res
           .status(400)
           .json({ status: 'error', message: 'A user exist with this email' });
       }
+      console.log(5)
     } catch (error) {
+      console.log(error.message)
       return res.status(500).json({ status: 'error', message: error.message });
     }
   }
