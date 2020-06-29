@@ -1,5 +1,5 @@
 {
-  "name": "nodejs-postgre-starter",
+  "name": "nodejs-postgres-starter",
   "version": "1.0.0",
   "description": "Starter pack for nodejs-postgres apps",
   "keywords": [
@@ -20,6 +20,9 @@
     "test": "cross-env NODE_ENV=test nyc mocha --require @babel/register --recursive --timeout 50000 test/index.js --exit",
     "db:drop": "cross-env NODE_ENV=test npx sequelize-cli db:migrate:undo",
     "db:migrate": "cross-env NODE_ENV=test npx sequelize-cli db:migrate"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   },
   "repository": {
     "type": "git",
